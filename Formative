@@ -1,0 +1,78 @@
+"""
+Batchimeg's formative project for a chatbox console for food service.
+"""
+
+guests = {'23' : 'Bob', '34' : 'Jeff', '45' : 'Tom'}
+starters = {'1' : 'Salad', '2' : 'French fries'}
+main_courses = {'3' : 'Spaghetti', '4' : 'Burger'}
+desserts = {'5' : 'Ice cream', '6' : 'Cake'}
+
+name = None
+rooom = None
+order = {}
+
+while room not in guests.keys():
+     room = input('Enter your room number: ')
+     if room in guests.keys():
+        name = input('Enter your name: ')
+        if guests[room] != name:
+            print ('Your name doesn't match your room number')
+     else:
+         print(f'Room {room} has not been booked.')
+
+#Starters
+print ()
+print ('Starters menu')
+for code, food in starters.items():
+    print (code, '->', food)
+starter = None
+while starter not in starters.keys():
+     starter = input ('Enter the starter number of your wanting: ')
+     if starter not in starters:
+         print('Not available.')
+      else:
+          order[starter] = starter[starter]
+          
+#Main
+print ()
+print ('Main course menu')
+for code, food in main_courses.items():
+    print (code, '->', food)
+main_course = None
+while main_course not in main_courses.keys():
+    main_course = input ('Enter the starter number of your wanting: ')
+    if main_course not in main_courses:
+        print('Not available.')
+    else:
+          order[main_course] = main_course[main_course]
+          
+#Dessert
+print ()
+print ('Desserts menu')
+for code, food in desserts.item():
+    print (code, '->', food)
+dessert = None
+while dessert not in desserts.keys():
+    dessert = input ('Enter the starter number of your wanting: ')
+    if dessert not in desserts:
+        print('Not available.')
+    else:
+        order[dessert] = dessert[dessert]
+        
+#Print customers order
+print ()
+print ('Your order')
+for code, food in order.items():
+    print (code, '->', food)
+print('Delivery time:', delivery_time)
+place_order = ''
+while place_order.lower() not in ('yes', 'no'):
+    place_order = input('Would you like to order (yes/no)? ')
+print ()
+if place_order == 'yes':
+    print('Your order will come soon.')
+else:
+    print ('Your order is cancelled.')
+    
+#Thank you
+print('Thank you for giving us your order, hope you enjoy your stay with us!')
